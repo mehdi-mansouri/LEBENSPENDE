@@ -1,3 +1,8 @@
+<?php
+include_once 'APIscript.js';
+
+error_reporting(0);
+?>
 <!doctype html>
 
   
@@ -15,7 +20,7 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
       <script src="js/bootstrap.min.js" ></script>
     <script src="js/script.js" ></script>
-    <script src="js/APIscript.js" ></script>
+    <script src="APIscript.js" ></script>
     <link href="css/style.css" rel="stylesheet" >
 
     <title>Hello, world!</title>
@@ -159,11 +164,18 @@
                
           
       </section>
-      <?php 
-        $myArray = json_decode($_POST['myJSONText']);
-        foreach($messages as $msg){
-        echo $msg;
-        }
+
+          <?php 
+       // $myArray = json_decode($_POST['myJSONText']);
+       // $values = explode(",", $_GET["myJSONText"]);
+         //$idArray = explode('&',$_SERVER["QUERY_STRING"]);
+          //$vars = unserialize($_GET['myJSONText']);
+          $messages = filter_input(INPUT_POST, 'myJSONText',FILTER_DEFAULT );
+          echo '<pre>';
+          var_dump($_GET);
+          echo '</pre>';
+          echo "You have searched for $messages.\n";
+        
       ?>
 
       

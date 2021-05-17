@@ -16,7 +16,7 @@
          
     });
     
-    var myJSONText = JSON.stringify( countr );
+    var myJSONText = JSON.stringify( countr[1] );
    $.ajax({
        type: "POST",
        url: "API.php",
