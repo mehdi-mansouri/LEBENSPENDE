@@ -1,0 +1,85 @@
+.bg-main {
+	background-color: #165;
+}
+.header .col-12:Last-child{
+
+	border-top: 1px solid aliceblue;
+	border-color: black;
+} 
+@media (min-width: 768 px) { 
+
+	.header .col-12:Last-child{
+		border: 0px;
+	}
+}
+
+.section-padding{
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+section .title {
+	font-size: 2.5rem;
+	font-weight: 300;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.box {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 15px;
+	margin-top: 10px;
+	transition: all .3s ease;
+}
+
+.box .title{
+	border-bottom: 1px solid darkblue;
+	padding-bottom: 10px;
+	font-size: 2rem;
+} 
+.box:hover{
+	box-shadow: 0px 2px 5px 0px rgba(0,0,0,16);
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.weather-container{
+    background-color: #eee;
+    text-align: center;
+    
+}
+.weather{
+    font-size: 22px;
+    margin:  0;
+    
+}
+.temp{
+    font-size: 66px;
+    
+}
+
+.vaccin{
+    background-color: #eee;
+    text-align: center;
+    
+}
+.biontech{
+    font-size: 22px;
+    margin:  0;
+    
+}
+.moderna {
+    font-size: 66px;
+    
+}
+.astraZeneca {
+    font-size: 25px;
+    
+}
+.country {
+    font-size: 25px;
+    
+}
+.deathe {
+    font-size: 18px;
+}

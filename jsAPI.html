@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"> </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script type="text/javascript">
+          $.getJSON("https://api.covid19api.com/summary", function (data1){
+        console.log(data1);
+   // var countr = data1.Countries[0].Country;
+   var  countr =[];
+    for (var i = 0; i < 190; i++) {
+  
+    var deathes= data1.Countries[i].TotalDeaths;
+//    var astraZeneca = data1.data.vaccination.astraZeneca;
+        countr[i] =data1.Countries[i].Country;
+       // $(".country").append(countr + "\\");
+        
+        $(".deathe").append(deathes);
+//    $(".astraZeneca").append(astraZeneca);
+    }
+    //window.location.href = "API.php?js_variable=" + countr;
+          
+          console.log(countr);
+    $.ajax({
+        url: "jsAPI.php",
+        method:"post",
+        data:{ countr: JSON.stringify(countr) };
+        
+            
+        
+        
+    })  }
+        </script>
+    </body>
+</html>
