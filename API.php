@@ -17,7 +17,7 @@
 
     <title>Hello, world!</title>
   
-  <body>
+  
            <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
@@ -156,15 +156,7 @@
                
           
       </section>
-      <?php
-        $countri=$_GET['countr'];
-
-            print_r($countri);
-            
-        
       
-      
-      ?>
       
      <div class="weather-container">
           
@@ -267,5 +259,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>-->
     
    
-  </body>
+  
 
