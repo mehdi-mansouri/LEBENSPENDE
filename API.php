@@ -1,8 +1,3 @@
-<?php
-include_once 'APIscript.js';
-
-error_reporting(0);
-?>
 <!doctype html>
 
   
@@ -14,11 +9,11 @@ error_reporting(0);
     <link href="css/bootstrap.min.css" rel="stylesheet" >
       <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
       
-       <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-      <script src="js/bootstrap.min.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js" ></script>
     <script src="js/script.js" ></script>
     <script src="APIscript.js" ></script>
     <link href="css/style.css" rel="stylesheet" >
@@ -26,7 +21,7 @@ error_reporting(0);
     <title>Hello, world!</title>
   
   
-           <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
     
@@ -70,26 +65,26 @@ error_reporting(0);
     </div>
   </div>
 </nav>
-      <section id="start" class="section-padding">
-            <div class="container-fluid ">
-                <div class="container">
-                    
-                    <img class="mx-auto d-block "  src="img/spende.png"   style="width: 18rem;" alt="alt"/>
-                    <blockquote class="blockquote">
-                    <p class=" text-center">81% der Corona-Impfstoffe ist nur für reiche Länder verfügbar </p>
-                    <footer class="blockquote-footer text-center mt-2 ">Quelle:WHO</footer>
+<section id="start" class="section-padding">
+      <div class="container-fluid ">
+          <div class="container">
 
-                </blockquote>
+              <img class="mx-auto d-block "  src="img/spende.png"   style="width: 18rem;" alt="alt"/>
+              <blockquote class="blockquote">
+              <p class=" text-center">81% der Corona-Impfstoffe ist nur für reiche Länder verfügbar </p>
+              <footer class="blockquote-footer text-center mt-2 ">Quelle:WHO</footer>
 
-              </div>
-            </div>
-     </section> 
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
+          </blockquote>
+
+        </div>
+      </div>
+</section> 
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="img/slide1.jpg" class="d-block w-100" alt="...">
@@ -165,19 +160,17 @@ error_reporting(0);
           
       </section>
 
-          <?php 
-       // $myArray = json_decode($_POST['myJSONText']);
-       // $values = explode(",", $_GET["myJSONText"]);
-         //$idArray = explode('&',$_SERVER["QUERY_STRING"]);
-          //$vars = unserialize($_GET['myJSONText']);
-          $messages = filter_input(INPUT_POST, 'myJSONText',FILTER_DEFAULT );
-          echo '<pre>';
-          var_dump($_GET);
-          echo '</pre>';
-          echo "You have searched for $messages.\n";
-        
-      ?>
 
+        <?php
+        
+        $emps= json_decode($_POST['emps'],true);
+        foreach ($emps as $emp) {
+            print_r($emp['countr']);
+        }
+        print_r($emps);
+        
+      
+        ?>
       
      <div class="weather-container">
           
@@ -187,38 +180,6 @@ error_reporting(0);
           <p class="astraZeneca"></p>
       </div>
 
-      <div class="container">
-  <h2>Responsive Table</h2>
-  <p>The .table-responsive class adds a scrollbar to the table when needed:</p>                                                                                      
-  
-  <div class="table-responsive">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Age</th>
-          <th>City</th>
-          <th>Country</th>
-          <th>Sex</th>
-         
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><?php $deat ?></td>
-          <td>Anna</td>
-          <td>Pitt</td>
-          <td>35</td>
-          <td>New York</td>
-          <td>USA</td>
-          <td>Female</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>  
       
       
       
@@ -235,50 +196,16 @@ error_reporting(0);
                       <img class="d-inline-block align-top"   src="img/impfung.jpg" width="100" height="100" alt=""/>
                   </div>
                   <div class="col-12 col-md-9">
-                      <h1 class="display-3 text-center">HI,ICH BIN MEHDI MANSOURI</h1>
+                      <h1 class="display-3 text-center">HI,Die Leute</h1>
                   </div>
               </div>
           </div>
       
       
       </div>
-      
-   <!--   <div class="container-fluid ">
-          <div class="container bg-info" >  
-                <div class="row ">
-                   <div class="col-12 ">
-                       <h1 class=""> hi 1</h1>
-                   </div>   
-                    <div class="col ">
-                       <h1 class="bg-primare"> hi 2</h1>
-                   </div>  
 
-                </div>
-              <div class="row ">
-                   <div class="col col-12 col-md-2 ">
-                       <h1 class=""> hi 1 of 2 </h1>
-                   </div>   
-                    <div class="col  col-12 col-md-8 bg-danger">
-                       <div class="row">
-                            <h1 class=""> hi 2 of 2 </h1>
-                        </div>
-                   </div>  
-                   <div class="col  col-12 col-md-2 bg-main">
-                       <h1 class=""> hi 3 of 2 </h1>
-                   </div>  
-                </div>
-          </div>
-      </div>
-     
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>-->
-    
-   
+ 
   
 

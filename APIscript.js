@@ -1,28 +1,26 @@
      var countr= new Array();
    //var  countr = [];
+   var deathes=new Array();
   $.getJSON("https://api.covid19api.com/summary", function(data1){
         console.log(data1);
     
-    // var  countr =[];
-    for (var i = 0; i < 190; i++) {
-  
-    var deathes= data1.Countries[i].TotalDeaths;
-    //var astraZeneca = data1.data.vaccination.astraZeneca;
-        countr =data1.Countries[i].Country;
-        $(".country").append(countr + "\\   ");
-        
-        $(".deathe").append(deathes);
-    }
-         
-    });
-    
-    var myJSONText = JSON.stringify( countr[1] );
-   $.ajax({
-       type: "POST",
-       url: "API.php",
-       data: "activitiesArray="+myJSONText,
-       success: function() {
-            $("#lengthQuestion").fadeOut('slow');
-       }
-    });
    
+        for (var i = 0; i < 190; i++) {
+               deathes[i]= data1.Countries[i].TotalDeaths;
+               countr[i] =data1.Countries[i].Country;
+       }
+//     
+    });
+    console.log(countr,deathes);
+    
+//    var myJSONText = JSON.stringify( countr[1] );
+//   $.ajax({
+//       url: "API.php",
+//       method: "POST",
+//       data: {emps :JSON.stringify(countr)},
+//       success: function() {
+//            
+//       }
+//     
+//     
+//  });
