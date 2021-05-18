@@ -168,15 +168,30 @@
         $json = file_get_contents($jsonurl);
         echo '<pre>';
         $arr=json_decode($json);
-        echo '</pre>';
+        echo '</pre>';?>
+         <table class="table table-hover">
+            <tr>
+              <th>Number</th>
+              <th>Country</th>
+              <th>Total Deaths</th>
+            </tr>
+  
+        <?php
         for ($i = 0; $i <190; $i++) {
-            
-            echo $arr->Countries[$i]->Country.'</br>';
+            ?>
+             <tr>
+                <td><?php echo $i+1?></td>
+                <td><?php  echo $arr->Countries[$i]->Country;?></td>
+                <td><?php  echo $arr->Countries[$i]->TotalDeaths?></td>
+              </tr>
+            <?php } ?>
+       </table>
+<!--            echo $arr->Countries[$i]->Country.'  '.$arr->Countries[$i]->TotalDeaths.'</br>';
           }
 //        for ($index = 0; $index < count($arr); $index++) {
 //            echo $arr[$index].'</br>';
 //          }
-        ?>
+        ?>-->
         
       
        
