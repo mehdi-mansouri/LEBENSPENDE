@@ -163,14 +163,19 @@
 
         <?php
         
-        $emps= json_decode($_POST['emps'],true);
-        foreach ($emps as $emp) {
-            print_r($emp['countr']);
-        }
-      //  print_r($emps);
+       
+        $jsonurl = "https://api.covid19api.com/summary";
+        $json = file_get_contents($jsonurl);
+        echo '<pre>';
+        var_dump(json_decode($json));
+        echo '</pre>';
+//        for ($index = 0; $index < count($arr); $index++) {
+//            echo $arr[$index].'</br>';
+//          }
+        ?>
         
       
-        ?>
+       
       
      <div class="weather-container">
           
