@@ -39,6 +39,7 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>
+        
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
@@ -56,12 +57,11 @@
       </ul>
       
       <!--  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
-        <form action="contact.php" method="get">
-         <input type="text" name="name" id="1">
-
-        <button class="btn btn-outline-success my-2 ny-sm-0" type="submit">Kontakt</button>
-        
-      </form>
+      
+            <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
+            
+      
     </div>
   </div>
 </nav>
@@ -167,7 +167,7 @@
         foreach ($emps as $emp) {
             print_r($emp['countr']);
         }
-        print_r($emps);
+      //  print_r($emps);
         
       
         ?>
