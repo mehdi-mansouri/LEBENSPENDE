@@ -167,8 +167,12 @@
         $jsonurl = "https://api.covid19api.com/summary";
         $json = file_get_contents($jsonurl);
         echo '<pre>';
-        var_dump(json_decode($json));
+        $arr=json_decode($json);
         echo '</pre>';
+        for ($i = 0; $i <190; $i++) {
+            
+            echo $arr->Countries[$i]->Country.'</br>';
+          }
 //        for ($index = 0; $index < count($arr); $index++) {
 //            echo $arr[$index].'</br>';
 //          }
