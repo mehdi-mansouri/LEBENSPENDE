@@ -138,44 +138,50 @@ include_once 'dbconfig.php';
             <div class="container-fluid ">
                 
                 <div class="container">
-                    <h1 class="title text-uppercase">Dinstleistungen</h1>
+                    <h1 class="title text-uppercase fw-bolder">6 arme Länder der Welt</h1>
                     <div class="row">
                         
                         <div class="title col col-12 col-sm-6 col-lg-4">
                             <div class="box bg-light">
                                 <h1 class="title"><strong><?php  echo $arr->Countries['27']->Country;?></strong></h1>
-                                <p class="lead"><?php  echo $arr->Countries['27']->TotalDeaths?> </p>
+                                <p class="lead">Total Deaths : <?php  echo $arr->Countries['27']->TotalDeaths;?> </p>
+                                <p class="lead">Total Confirmed : <?php  echo $arr->Countries['27']->TotalConfirmed;?> </p>
                             </div>
                         </div>
                         <div class="title col col-12 col-sm-6 col-lg-4">
                             <div class="box bg-light">
                                 <h1 class="title"><strong><?php  echo $arr->Countries['159']->Country;?></strong></h1>
-                                <p class="lead"><?php  echo $arr->Countries['159']->TotalDeaths?> </p>
-                            </div>
+                                <p class="lead">Total Deaths : <?php  echo $arr->Countries['159']->TotalDeaths;?> </p>
+                                <p class="lead">Total Confirmed : <?php  echo $arr->Countries['159']->TotalConfirmed;?> </p>
+                         </div>
                         </div>
                         <div class="title col col-12 col-sm-6 col-lg-4">
                             <div class="box bg-light">
                                 <h1 class="title"><strong><?php  echo $arr->Countries['102']->Country;?></strong></h1>
-                                <p class="lead"><?php  echo $arr->Countries['102']->TotalDeaths?> </p>
-                            </div>
+                                <p class="lead">Total Deaths : <?php  echo $arr->Countries['102']->TotalDeaths;?> </p>
+                                <p class="lead">Total Confirmed : <?php  echo $arr->Countries['102']->TotalConfirmed;?> </p>
+                         </div>
                         </div>
                         <div class="title col col-12 col-sm-6 col-lg-4">
                             <div class="box bg-light">
                                 <h1 class="title"><strong><?php  echo $arr->Countries['117']->Country;?></strong></h1>
-                                <p class="lead"><?php  echo $arr->Countries['117']->TotalDeaths?> </p>
+                                <p class="lead">Total Deaths : <?php  echo $arr->Countries['117']->TotalDeaths;?> </p>
+                                <p class="lead">Total Confirmed : <?php  echo $arr->Countries['117']->TotalConfirmed;?> </p>
                             </div>
                         </div>
                         <div class="title col col-12 col-sm-6 col-lg-4">
                             <div class="box bg-light">
                                 <h1 class="title"><strong><?php  echo $arr->Countries['0']->Country;?></strong></h1>
-                                <p class="lead"><?php  echo $arr->Countries['0']->TotalDeaths?> </p>
+                                <p class="lead">Total Deaths : <?php  echo $arr->Countries['0']->TotalDeaths;?> </p>
+                                <p class="lead">Total Confirmed : <?php  echo $arr->Countries['0']->TotalConfirmed;?> </p>
                             </div>
                         </div>
                         <div class="title col col-12 col-sm-6 col-lg-4">
                             <div class="box bg-light">
                                 <h1 class="title"><strong><?php  echo $arr->Countries['39']->Country;?></strong></h1>
-                                <p class="lead"><?php  echo $arr->Countries['39']->TotalDeaths?> </p>
-                            </div>
+                                <p class="lead">Total Deaths : <?php  echo $arr->Countries['39']->TotalDeaths;?> </p>
+                                <p class="lead">Total Confirmed : <?php  echo $arr->Countries['39']->TotalConfirmed;?> </p>
+                         </div>
                         </div>
                     </div>
                     
@@ -202,6 +208,7 @@ include_once 'dbconfig.php';
             <tr>
               <th>Number</th>
               <th>Country</th>
+              <th>Total Confirmed</th>
               <th>Total Deaths</th>
             </tr>
   
@@ -211,6 +218,7 @@ include_once 'dbconfig.php';
              <tr>
                 <td><?php echo $i+1?></td>
                 <td><?php  echo $arr->Countries[$i]->Country;?></td>
+                <td><?php  echo $arr->Countries[$i]->TotalConfirmed;?></td>
                 <td><?php  echo $arr->Countries[$i]->TotalDeaths?></td>
               </tr>
             <?php } ?>
@@ -249,7 +257,7 @@ include_once 'dbconfig.php';
                       <img class="d-inline-block align-top"   src="img/impfung.jpg" width="100" height="100" alt=""/>
                   </div>
                   <div class="col-12 col-md-9">
-                      <h1 class="display-3 text-center">HI,Die Leute</h1>
+                      <h1 class="display-3 text-center"></h1>
                   </div>
               </div>
           </div>
