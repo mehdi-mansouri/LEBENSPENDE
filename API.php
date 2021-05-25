@@ -1,3 +1,11 @@
+<?php 
+include_once 'dbconfig.php';
+
+?>
+
+
+
+
 <!doctype html>
 
   
@@ -18,7 +26,7 @@
     <script src="APIscript.js" ></script>
     <link href="css/style.css" rel="stylesheet" >
 
-    <title>Hello, world!</title>
+    <title>Lebenspende</title>
   
 
   
@@ -38,30 +46,41 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#start">Start</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        
+     
+       <?php 
+       if (isset($_SESSION['login'])) { ?>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Impfungen</a></li>
-            <li><a class="dropdown-item" href="#">Arme Länder</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          User Acount
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#"><?php echo $_SESSION['username']; ?></a></li>
+          <li><a class="dropdown-item" href="#"><?php echo $_SESSION['email']; ?></a></li>
+         
+        </ul>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#" tabindex="-1" >Wellcome <?php echo $_SESSION['username']; ?></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      <li class="nav-item">
+          <a class="nav-link" href="logout.php" tabindex="-1" >Exit</a>
         </li>
       </ul>
-      
+
+        <a href="pricing.php" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Spenden</a>
+      <?php  } else{ ?>
+        <li class="nav-item">
+          <a class="nav-link" href="register.php">register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.php" tabindex="-1" >Login</a>
+        </li>
+      </ul>
+      <a href="login.php" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Spenden</a>
+      <?php  }  ?>
       <!--  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+    
       
-            <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
             
       
     </div>
