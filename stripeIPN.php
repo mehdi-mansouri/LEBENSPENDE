@@ -25,5 +25,5 @@
 
 	//send an email
 	//store information to the database
-	echo 'Success! You have been charged $' . ($products[$productID]["price"]/100);
+	echo 'Zahlung war erfolgreich! Danke für Ihre Spende  €' . ($products[$productID]["price"]/100);
 ?>

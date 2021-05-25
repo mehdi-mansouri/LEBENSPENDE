@@ -1,4 +1,6 @@
+
 <?php
+   
 	$products = array(
 		"product1" => array(
 			"title" => "Astrazenica",

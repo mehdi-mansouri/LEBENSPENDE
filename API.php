@@ -126,6 +126,14 @@ include_once 'dbconfig.php';
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+        <?php
+        
+       
+        $jsonurl = "https://api.covid19api.com/summary";
+        $json = file_get_contents($jsonurl);
+        echo '<pre>';
+        $arr=json_decode($json);
+        echo '</pre>';?>
       <section id="dinstleistung"  class="section-padding">
             <div class="container-fluid ">
                 
@@ -135,38 +143,38 @@ include_once 'dbconfig.php';
                         
                         <div class="title col col-12 col-sm-6 col-lg-4">
                             <div class="box bg-light">
-                                <h1 class="title"><strong>Text Box</strong></h1>
-                                <p class="lead">diese box ist viele file und sehr schlecht sein,wenn wir keine </p>
+                                <h1 class="title"><strong><?php  echo $arr->Countries['27']->Country;?></strong></h1>
+                                <p class="lead"><?php  echo $arr->Countries['27']->TotalDeaths?> </p>
                             </div>
                         </div>
                         <div class="title col col-12 col-sm-6 col-lg-4">
                             <div class="box bg-light">
-                                <h1 class="title"><strong>Text Box</strong></h1>
-                                <p class="lead">diese box ist viele file und sehr schlecht sein,wenn wir keine </p>
+                                <h1 class="title"><strong><?php  echo $arr->Countries['159']->Country;?></strong></h1>
+                                <p class="lead"><?php  echo $arr->Countries['159']->TotalDeaths?> </p>
                             </div>
                         </div>
                         <div class="title col col-12 col-sm-6 col-lg-4">
                             <div class="box bg-light">
-                                <h1 class="title"><strong>Text Box</strong></h1>
-                                <p class="lead">diese box ist viele file und sehr schlecht sein,wenn wir keine </p>
+                                <h1 class="title"><strong><?php  echo $arr->Countries['102']->Country;?></strong></h1>
+                                <p class="lead"><?php  echo $arr->Countries['102']->TotalDeaths?> </p>
                             </div>
                         </div>
                         <div class="title col col-12 col-sm-6 col-lg-4">
                             <div class="box bg-light">
-                                <h1 class="title"><strong>Text Box</strong></h1>
-                                <p class="lead">diese box ist viele file und sehr schlecht sein,wenn wir keine </p>
+                                <h1 class="title"><strong><?php  echo $arr->Countries['117']->Country;?></strong></h1>
+                                <p class="lead"><?php  echo $arr->Countries['117']->TotalDeaths?> </p>
                             </div>
                         </div>
                         <div class="title col col-12 col-sm-6 col-lg-4">
                             <div class="box bg-light">
-                                <h1 class="title"><strong>Text Box</strong></h1>
-                                <p class="lead">diese box ist viele file und sehr schlecht sein,wenn wir keine </p>
+                                <h1 class="title"><strong><?php  echo $arr->Countries['0']->Country;?></strong></h1>
+                                <p class="lead"><?php  echo $arr->Countries['0']->TotalDeaths?> </p>
                             </div>
                         </div>
                         <div class="title col col-12 col-sm-6 col-lg-4">
                             <div class="box bg-light">
-                                <h1 class="title"><strong>Text Box</strong></h1>
-                                <p class="lead">diese box ist viele file und sehr schlecht sein,wenn wir keine </p>
+                                <h1 class="title"><strong><?php  echo $arr->Countries['39']->Country;?></strong></h1>
+                                <p class="lead"><?php  echo $arr->Countries['39']->TotalDeaths?> </p>
                             </div>
                         </div>
                     </div>
