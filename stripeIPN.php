@@ -27,4 +27,3 @@
 	//store information to the database
 	echo '<h1 style="text-align:center; padding-top: 25px;">Zahlung war erfolgreich! Danke für Ihre Spende  €' . ($products[$productID]["price"]/100).'</h1>';
     echo '<a style="text-align:center; padding-top: 25px;" href="API.php">zurück zu erste Seite</a>';
-?>
