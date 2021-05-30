@@ -3,19 +3,19 @@
    
 	$products = array(
 		"product1" => array(
-			"title" => "Astrazenica",
+			"title" => "AstraZeneca",
 			"price" => 500,
-			"features" => array("feature 1", "feature 2", "feature 3")
+			"features" => array("", "", "")
 		),
 		"product2" => array(
 			"title" => "Biontech",
 			"price" => 500,
-			"features" => array("feature 1", "feature 2", "feature 3")
+			"features" => array("", "", "")
 		),
 		"product3" => array(
-			"title" => "sinoVax",
+			"title" => "Moderna",
 			"price" => 500,
-			"features" => array("feature 1", "feature 2", "feature 3")
+			"features" => array("", "", "")
 		)
 		
 	);

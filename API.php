@@ -63,7 +63,7 @@ include_once 'dbconfig.php';
           <a class="nav-link" href="#" tabindex="-1" >Wellcome <?php echo $_SESSION['username']; ?></a>
         </li>
       <li class="nav-item">
-          <a class="nav-link" href="logout.php" tabindex="-1" >Exit</a>
+          <a class="nav-link" href="logout.php" tabindex="-1" >Logout</a>
         </li>
       </ul>
 
@@ -108,13 +108,16 @@ include_once 'dbconfig.php';
    </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="img/slide1.jpg" class="d-block w-100" alt="...">
+      <img src="img/Lebenspende1.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="img/slide2.jpg" class="d-block w-100" alt="...">
+      <img src="img/Lebenspende2.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="img/slide3.jpg" class="d-block w-100" alt="...">
+      <img src="img/Lebenspende3.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="img/Lebenspende4.jpg" class="d-block w-100" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

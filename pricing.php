@@ -98,7 +98,7 @@
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-header text-center">
-                            <h2 class="price"><span class="currency">€</span>'.($attributes['price']/100).'</h2>
+                            <h2 class="price">'.($attributes['price']/100).'<span class="currency">€</span></h2>
                         </div>
                         <div class="card-body text-center">
                             <div class="card-title">
