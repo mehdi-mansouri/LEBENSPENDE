@@ -5,15 +5,13 @@ $successmassage = null;
 
 if (isset($_POST['sub'])) {
   $email = $_POST['email'];
-  $password = $_POST['password'];
+  $password = crypt($_POST['password'],'$2a$07$usesomesillystringforsalt$');
   $username;
-
   $sql = "SELECT username,email,id,password FROM user WHERE email=? AND password=?";
   $result = $conn->prepare($sql);
   $result->bindValue(1, $email);
   $result->bindValue(2, $password);
   $result->execute();
-
   if ($result->rowCount() >= 1) {
     $rows = $result->fetch(PDO::FETCH_ASSOC);
     $_SESSION['username'] = $rows['username'];
@@ -31,14 +29,8 @@ if (isset($_POST['sub'])) {
     $successmassage = false;
   }
 }
-
-
-
-
-
 ?>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <title>weblog</title>
@@ -87,18 +79,12 @@ if (isset($_POST['sub'])) {
               <a class="nav-link" href="https://www.who.int">WHO</a>
             </li>
           </ul>
-
           <!--  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
-
-
-
-
         </div>
       </div>
     </nav>
   </div>
   <!-- end headers -->
-
   <br><br><br><br><br>
   <div class="container">
     <div class="row">
@@ -115,17 +101,9 @@ if (isset($_POST['sub'])) {
       <div class="col-lg-4"></div>
     </div>
   </div>
-
-
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-
-
 </body>
-
 <?php if ($successmassage) { ?>
-
   <script>
     const Toast = Swal.mixin({
       toast: true,
@@ -138,14 +116,12 @@ if (isset($_POST['sub'])) {
         toast.addEventListener('mouseleave', Swal.resumeTimer)
       }
     })
-
     Toast.fire({
       icon: 'success',
       title: 'user added successfully'
     })
   </script>
 <?php } else { ?>
-
   <script>
     const Toast = Swal.mixin({
       toast: true,
@@ -158,16 +134,12 @@ if (isset($_POST['sub'])) {
         toast.addEventListener('mouseleave', Swal.resumeTimer)
       }
     })
-
     Toast.fire({
       icon: 'error',
       title: 'user not fount!'
     })
   </script>
 <?php } ?>
-
-
 <script src="../js/jquery-3.5.1.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
-
 </html>

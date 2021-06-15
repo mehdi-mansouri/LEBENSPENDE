@@ -199,11 +199,11 @@ echo '</pre>'; ?>
 <?php
 
 
-$jsonurl = "https://api.covid19api.com/summary";
-$json = file_get_contents($jsonurl);
-echo '<pre>';
-$arr = json_decode($json);
-echo '</pre>'; ?>
+// $jsonurl = "https://api.covid19api.com/summary";
+// $json = file_get_contents($jsonurl);
+// echo '<pre>';
+$arr1 = json_decode($json);
+//echo '</pre>'; ?>
 <table class="table table-hover">
   <tr>
     <th>Number</th>
@@ -217,9 +217,9 @@ echo '</pre>'; ?>
   ?>
     <tr>
       <td><?php echo $i + 1 ?></td>
-      <td><?php echo $arr->Countries[$i]->Country; ?></td>
-      <td><?php echo $arr->Countries[$i]->TotalConfirmed; ?></td>
-      <td><?php echo $arr->Countries[$i]->TotalDeaths ?></td>
+      <td><?php echo $arr1->Countries[$i]->Country; ?></td>
+      <td><?php echo $arr1->Countries[$i]->TotalConfirmed; ?></td>
+      <td><?php echo $arr1->Countries[$i]->TotalDeaths ?></td>
     </tr>
   <?php } ?>
 </table>

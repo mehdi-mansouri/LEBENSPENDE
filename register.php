@@ -5,7 +5,8 @@ if (isset($_POST['sub'])) {
   $name = $_POST['username'];
   $email = $_POST['email'];
   $phone = $_POST['phone'];
-  $password = $_POST['password'];
+  $password =crypt($_POST['password'],'$2a$07$usesomesillystringforsalt$');
+  
   $sql = "INSERT INTO user SET username=?,email=?,phone=?,password=?";
   $result = $conn->prepare($sql);
   $result->bindValue(1, $name);
@@ -30,11 +31,9 @@ if (isset($_POST['sub'])) {
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -44,12 +43,9 @@ if (isset($_POST['sub'])) {
   <script src="APIscript.js"></script>
   <link href="css/style.css" rel="stylesheet">
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 </head>
-
 <body>
   <div>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
@@ -65,20 +61,11 @@ if (isset($_POST['sub'])) {
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="API.php">Start</a>
             </li>
-
-
-
-
-
-
-
-
         </div>
       </div>
     </nav>
   </div>
   <!-- end headers -->
-
   <br><br><br><br><br>
   <div class="container">
     <div class="row">
@@ -97,16 +84,9 @@ if (isset($_POST['sub'])) {
       <div class="col-lg-4"></div>
     </div>
   </div>
-
-
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-
 </body>
-
 <?php if ($successmassage) { ?>
-
   <script>
     const Toast = Swal.mixin({
       toast: true,
@@ -126,11 +106,6 @@ if (isset($_POST['sub'])) {
     })
   </script>
 <?php } ?>
-
-
-
-
 <script src="../js/jquery-3.5.1.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
-
 </html>
