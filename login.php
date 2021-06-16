@@ -5,9 +5,9 @@ $successmassage = null;
 
 if (isset($_POST['sub'])) {
   $email = $_POST['email'];
-  $password = crypt($_POST['password'],'$2a$07$usesomesillystringforsalt$');
+  $password = crypt($_POST['password'], '$2a$07$usesomesillystringforsalt$');
   $username;
-  $sql = "SELECT username,email,id,password FROM user WHERE email=? AND password=?";
+  $sql = "SELECT username,email,id,password,admin,phone FROM user WHERE email=? AND password=?";
   $result = $conn->prepare($sql);
   $result->bindValue(1, $email);
   $result->bindValue(2, $password);
@@ -19,18 +19,24 @@ if (isset($_POST['sub'])) {
     $_SESSION['password'] = $password;
     $_SESSION['login'] = true;
     $successmassage = true;
+  
     if (isset($_POST['rem'])) {
       setcookie('email', $_SESSION['email'], time() + 60 * 60 * 24 * 7, '/');
       setcookie('password', $_SESSION['password'], time() + 60 * 60 * 24 * 7, '/');
-    } else {
     }
-    header('location:API.php');
+    
+    if ($rows['admin'] == 1) {
+      header('location:admin.php');
+    } else {
+      header('location:API.php');
+    }
   } else {
     $successmassage = false;
   }
 }
 ?>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>weblog</title>
@@ -142,4 +148,5 @@ if (isset($_POST['sub'])) {
 <?php } ?>
 <script src="../js/jquery-3.5.1.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+
 </html>
