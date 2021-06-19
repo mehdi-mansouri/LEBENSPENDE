@@ -1,5 +1,8 @@
 <?php
 require_once "config.php";
+include_once 'dbconfig.php';
+$data=$_SESSION["country"];
+$amount=$_SESSION['amount'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -78,15 +81,14 @@ require_once "config.php";
             </div>
         </nav>
     </div>
+    <br><br>
+    <div class="container">
+        <div class="col-lg-4"></div>
+        <div class="progress ">
 
-
-
-
-
-
-
-
-
+            <div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+        </div>
+    </div>
 
     <div class="container">
         <?php
@@ -108,23 +110,24 @@ require_once "config.php";
                             <ul class="list-group">
                             ';
 
-            foreach ($attributes['features'] as $feature)
-                echo '<li class="list-group-item">' . $feature . '</li>';
-
+            // foreach ($attributes['features'] as $feature)
+            //  echo '<li class="list-group-item">' . $feature . '</li>';
+  
             echo '
                             </ul>
-                            <br>
+                            <br>   
                             <form action="stripeIPN.php?id=' . $productID . '" method="POST">
                               <script
                                 src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                                 data-key="' . $stripeDetails['publishableKey'] . '"
                                 data-amount="' . $attributes['price'] . '"
-                                data-name="' . $attributes['title'] . '"
+                                data-name="' . $attributes['title'] . '.' . $data.'"
                                 data-description="Widget"
                                 data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
                                 data-locale="auto">
                               </script>
                             </form>
+                          
                         </div>
                     </div>
                 </div>
@@ -138,6 +141,9 @@ require_once "config.php";
         }
         ?>
     </div>
+    </br>
+
+    </form>
 </body>
 
 </html>

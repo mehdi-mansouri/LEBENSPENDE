@@ -1,11 +1,17 @@
 <?php
 	require_once "config.php";
+	include_once 'dbconfig.php';
+	$data=$_SESSION['country'];
+	$amount=$_SESSION['amount'];
+
 
 	\Stripe\Stripe::setVerifySslCerts(false);
 
 	// Token is created using Checkout or Elements!
 	// Get the payment token ID submitted by the form:
 	$productID = $_GET['id'];
+	
+	
 
 	if (!isset($_POST['stripeToken']) || !isset($products[$productID])) {
 		header("Location: pricing.php");
@@ -17,9 +23,9 @@
 
 	// Charge the user's card:
 	$charge = \Stripe\Charge::create(array(
-		"amount" => $products[$productID]["price"],
+		"amount" => $products[$productID]["price"]."$amount",
 		"currency" => "EUR",
-		"description" => $products[$productID]["title"],
+		"description" => $products[$productID]["title"]."$data",
 		"source" => $token,
 	));
 
@@ -27,3 +33,4 @@
 	//store information to the database
 	echo '<h1 style="text-align:center; padding-top: 25px;">Zahlung war erfolgreich! Danke für Ihre Spende  €' . ($products[$productID]["price"]/100).'</h1>';
     echo '<a style="text-align:center; padding-top: 25px;" href="API.php">zurück zu erste Seite</a>';
+	

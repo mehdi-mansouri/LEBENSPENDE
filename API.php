@@ -1,5 +1,6 @@
 <?php
 include_once 'dbconfig.php';
+
 //
 ?>
 
@@ -67,7 +68,7 @@ include_once 'dbconfig.php';
           </li>
       </ul>
 
-      <a href="pricing.php" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Spenden</a>
+      <a href="country.php" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Spenden</a>
     <?php  } else { ?>
       <li class="nav-item">
         <a class="nav-link" href="register.php">register</a>
@@ -134,7 +135,9 @@ $jsonurl = "https://api.covid19api.com/summary";
 $json = file_get_contents($jsonurl);
 echo '<pre>';
 $arr = json_decode($json);
-echo '</pre>'; ?>
+echo '</pre>';
+
+?>
 <section id="dinstleistung" class="section-padding">
   <div class="container-fluid ">
 
@@ -204,7 +207,9 @@ $jsonurl = "https://api.covid19api.com/summary";
 $json = file_get_contents($jsonurl);
 echo '<pre>';
 $arr = json_decode($json);
-echo '</pre>'; ?>
+echo '</pre>';
+
+?>
 <table class="table table-hover">
   <tr>
     <th>Number</th>
