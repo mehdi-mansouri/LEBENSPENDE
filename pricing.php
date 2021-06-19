@@ -3,6 +3,7 @@ require_once "config.php";
 include_once 'dbconfig.php';
 $data=$_SESSION["country"];
 $amount=$_SESSION['amount'];
+$amount=$amount*100;
 ?>
 <!doctype html>
 <html lang="en">
@@ -101,7 +102,7 @@ $amount=$_SESSION['amount'];
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-header text-center">
-                            <h2 class="price">' . ($attributes['price'] / 100) . '<span class="currency">€</span></h2>
+                            <h2 class="price">' . ($amount)/100 . '<span class="currency">€</span></h2>
                         </div>
                         <div class="card-body text-center">
                             <div class="card-title">
@@ -120,7 +121,7 @@ $amount=$_SESSION['amount'];
                               <script
                                 src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                                 data-key="' . $stripeDetails['publishableKey'] . '"
-                                data-amount="' . $attributes['price'] . '"
+                                data-amount="' . $amount. '"
                                 data-name="' . $attributes['title'] . '.' . $data.'"
                                 data-description="Widget"
                                 data-image="https://stripe.com/img/documentation/checkout/marketplace.png"

@@ -23,14 +23,14 @@
 
 	// Charge the user's card:
 	$charge = \Stripe\Charge::create(array(
-		"amount" => $products[$productID]["price"]."$amount",
+		"amount" =>$amount*100,
 		"currency" => "EUR",
-		"description" => $products[$productID]["title"]."$data",
+		"description" => $products[$productID]["title"].'/'."$data",
 		"source" => $token,
 	));
 
 	//send an email
 	//store information to the database
-	echo '<h1 style="text-align:center; padding-top: 25px;">Zahlung war erfolgreich! Danke für Ihre Spende  €' . ($products[$productID]["price"]/100).'</h1>';
+	echo '<h1 style="text-align:center; padding-top: 25px;">Zahlung war erfolgreich! Danke für Ihre Spende  €' . ($amount).'</h1>';
     echo '<a style="text-align:center; padding-top: 25px;" href="API.php">zurück zu erste Seite</a>';
 	
