@@ -27,7 +27,7 @@ include_once 'dbconfig.php';
 
 <title>Lebenspende</title>
 
-
+<body>
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -198,24 +198,6 @@ echo '</pre>';
 </section>
 
 
-<?php
-
-
-<<<<<<< HEAD
-$jsonurl = "https://api.covid19api.com/summary";
-$json = file_get_contents($jsonurl);
-echo '<pre>';
-$arr = json_decode($json);
-echo '</pre>';
-
-?>
-=======
-// $jsonurl = "https://api.covid19api.com/summary";
-// $json = file_get_contents($jsonurl);
-// echo '<pre>';
-$arr1 = json_decode($json);
-//echo '</pre>'; ?>
->>>>>>> 843f54d897592baf6ed0a084ee3423b9ee6cc876
 <table class="table table-hover">
   <tr>
     <th>Number</th>
@@ -229,18 +211,13 @@ $arr1 = json_decode($json);
   ?>
     <tr>
       <td><?php echo $i + 1 ?></td>
-      <td><?php echo $arr1->Countries[$i]->Country; ?></td>
-      <td><?php echo $arr1->Countries[$i]->TotalConfirmed; ?></td>
-      <td><?php echo $arr1->Countries[$i]->TotalDeaths ?></td>
+      <td><?php echo $arr->Countries[$i]->Country; ?></td>
+      <td><?php echo $arr->Countries[$i]->TotalConfirmed; ?></td>
+      <td><?php echo $arr->Countries[$i]->TotalDeaths ?></td>
     </tr>
   <?php } ?>
 </table>
-<!--            echo $arr->Countries[$i]->Country.'  '.$arr->Countries[$i]->TotalDeaths.'</br>';
-          }
-//        for ($index = 0; $index < count($arr); $index++) {
-//            echo $arr[$index].'</br>';
-//          }
-        ?>-->
+
 
 
 
@@ -276,5 +253,5 @@ $arr1 = json_decode($json);
 
 
 </div>
-
+</body>
 <script src="js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
