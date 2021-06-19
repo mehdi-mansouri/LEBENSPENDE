@@ -3,6 +3,7 @@ include_once 'dbconfig.php';
 if (isset($_POST['sub'])) {
     $_SESSION['country'] = $_POST['country'];
     $_SESSION['amount'] = $_POST['amount'];
+    header('location:pricing.php');
 }
 
 ?>
@@ -92,8 +93,8 @@ if (isset($_POST['sub'])) {
             <div class="col-lg-4"></div>
             
             <div class="col-12 col-lg-4">
-            <h3>please choose country/amount</h3><br><br>
-                <form action="pricing.php" method="POST" class="register-form">
+            <h3 >please choose country/amount</h3><br><br>
+                <form action="country.php" method="POST" class="register-form">
                 
                     <select name="country" class="form-select form-select-sm" aria-label=".form-select-sm example">
                         <option selected>Open to choose Country</option>
