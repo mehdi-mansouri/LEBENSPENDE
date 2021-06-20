@@ -32,6 +32,8 @@ if (isset($_REQUEST['del'])) {
                 <h3 class="p-3 pt-5">Admin LEBEN SPENDE</h3>
                 <hr />
                 <a href="insert.php"><button class="btn btn-primary font-16 m-3">insert new User</button></a>
+                <a style="text-align: right;float: right;" href="logout.php" tabindex="-1">Logout</a>
+                
                 <div class="table-responsive">
                     <table id="mytable" class="table table-bordered table-striped m-2">
                         <thead>
