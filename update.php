@@ -4,18 +4,15 @@ if (isset($_POST['update'])) {
     echo 'bis jetz';
     $userId = intval($_GET['id']);
     $fname = $_POST['username'];
-   // $lname = $_POST['lname'];
     $phone = intval($_POST['phone']);
     $email = $_POST['email'];
-   // $address = $_POST['address'];
+   
     $sql = 'UPDATE user SET username=:username,email=:email,phone=:phone WHERE id=:id';
     $query = $conn->prepare($sql);
     $query->bindParam(':username', $fname, PDO::PARAM_STR);
-    // $query->bindParam(':lastname', $lname, PDO::PARAM_STR);
     $query->bindParam(':email', $email, PDO::PARAM_STR);
     $query->bindParam(':phone', $phone, PDO::PARAM_STR);
-    // $query->bindParam(':address', $address, PDO::PARAM_STR);
-    $query->bindParam(':id', $userId, PDO::PARAM_STR);
+     $query->bindParam(':id', $userId, PDO::PARAM_STR);
     $query->execute();
     echo "<script>alert('Update succsessfuly');</script>";
     echo "<script>window.location.href='admin.php'</script>";

@@ -67,7 +67,7 @@ if (isset($_REQUEST['del'])) {
 
                                     <td><a href="update.php?id=<?php echo $row->id;  ?>"><button class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
 
-                                    <td><a href="admin.php?del=<?php echo $row->id; ?>"><button class="btn btn-danger" onClick="return confirm('آیا حذف انجام شود');"><span class="glyphicon glyphicon-trash"></span></button></a></td>
+                                    <td><a href="admin.php?del=<?php echo $row->id; ?>"><button class="btn btn-danger" onClick="return confirm('are you sure to delete');"><span class="glyphicon glyphicon-trash"></span></button></a></td>
                                 </tr>
                             <?php
                             }

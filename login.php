@@ -24,7 +24,7 @@ if (isset($_POST['sub'])) {
       setcookie('email', $_SESSION['email'], time() + 60 * 60 * 24 * 7, '/');
       setcookie('password', $_SESSION['password'], time() + 60 * 60 * 24 * 7, '/');
     }
-    
+    var_dump($rows['admin']);
     if ($rows['admin'] == 1) {
       header('location:admin.php');
     } else {
