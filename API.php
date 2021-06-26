@@ -66,10 +66,6 @@ include_once 'dbconfig.php';
       <a href="login.php" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Spenden</a>
     <?php  }  ?>
     <!--  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
-
-
-
-
     </div>
   </div>
 </nav>

@@ -7,7 +7,7 @@ if (isset($_POST['sub'])) {
   $email = $_POST['email'];
   $password = crypt($_POST['password'], '$2a$07$usesomesillystringforsalt$');
   $username;
-  $sql = "SELECT username,email,id,password,admin,phone FROM user WHERE email=? AND password=?";
+  $sql = "SELECT username,email,id,password,admin_rolle,phone FROM user WHERE email=? AND password=?";
   $result = $conn->prepare($sql);
   $result->bindValue(1, $email);
   $result->bindValue(2, $password);
