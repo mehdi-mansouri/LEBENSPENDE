@@ -1,18 +1,16 @@
 <?php
 require_once('dbconfig.php');
 if (isset($_POST['update'])) {
-    echo 'bis jetz';
-    $userId = intval($_GET['id']);
+    $userId = intval($_POST['id']);
     $fname = $_POST['username'];
     $phone = intval($_POST['phone']);
     $email = $_POST['email'];
-   
     $sql = 'UPDATE user SET username=:username,email=:email,phone=:phone WHERE id=:id';
     $query = $conn->prepare($sql);
     $query->bindParam(':username', $fname, PDO::PARAM_STR);
     $query->bindParam(':email', $email, PDO::PARAM_STR);
     $query->bindParam(':phone', $phone, PDO::PARAM_STR);
-     $query->bindParam(':id', $userId, PDO::PARAM_STR);
+    $query->bindParam(':id', $userId, PDO::PARAM_STR);
     $query->execute();
     echo "<script>alert('Update succsessfuly');</script>";
     echo "<script>window.location.href='admin.php'</script>";
@@ -20,6 +18,7 @@ if (isset($_POST['update'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>PHP CRUD</title>
@@ -30,11 +29,12 @@ if (isset($_POST['update'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
+
 <body>
     <div class="container border p-4 mt-4">
         <div class="row">
             <div class="col-md-12">
-               <h3 class="p-4">User Edit</h3>
+                <h3 class="p-4">User Edit</h3>
                 <hr />
             </div>
         </div>
@@ -66,4 +66,5 @@ if (isset($_POST['update'])) {
         </form>
     </div>
 </body>
+
 </html>
