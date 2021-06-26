@@ -2,18 +2,16 @@
 require_once('dbconfig.php');
 if (isset($_POST['insert'])) {
     $fname = $_POST['username'];
-    //$lname=$_POST['LastName'];
     $phone = intval($_POST['phone']);
     $email = $_POST['email'];
-    // $address=$_POST['address'];
-    $sql = "INSERT INTO user(username,email,phone) VALUES (:username,
-    :email,:phone)";
+    $password = crypt($_POST['password'], '$2a$07$usesomesillystringforsalt$');
+    $sql = "INSERT INTO user(username,email,phone,password) VALUES (:username,
+    :email,:phone,:password)";
     $query = $conn->prepare($sql);
     $query->bindParam(':username', $fname, PDO::PARAM_STR);
-    // $query->bindParam(':lastname',$lname,PDO::PARAM_STR);
     $query->bindParam(':email', $email, PDO::PARAM_STR);
     $query->bindParam(':phone', $phone, PDO::PARAM_STR);
-    // $query->bindParam(':address',$address,PDO::PARAM_STR);
+    $query->bindParam(':password', $password, PDO::PARAM_STR);
     $query->execute();
     $insertlastid = $conn->lastInsertId();
     if ($insertlastid) {
@@ -66,6 +64,10 @@ if (isset($_POST['insert'])) {
             <div class="form-group">
                 <label>Email</label>
                 <input type="email" class="form-control" name="email" placeholder="sample@sample.com">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" placeholder="*******">
             </div>
             <div class="form-group">
                 <label>phone</label>
