@@ -24,7 +24,7 @@ if (isset($_POST['sub'])) {
 
 <head>
   <meta charset="UTF-8">
-  <title>weblog</title>
+  <title>Leben Spende</title>
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="//cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>

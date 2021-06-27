@@ -2,6 +2,7 @@
 require_once('dbconfig.php');
 if (isset($_POST['update'])) {
     $userId = intval($_POST['id']);
+
     $fname = $_POST['username'];
     $phone = intval($_POST['phone']);
     $email = $_POST['email'];
@@ -21,7 +22,7 @@ if (isset($_POST['update'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>PHP CRUD</title>
+    <title>Leben Spende</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -49,6 +50,15 @@ if (isset($_POST['update'])) {
         <form method="post">
             <div class="form-row">
                 <div class="form-group col-md-6">
+
+                    <input type="hidden" class="form-control" name="id" value="<?php echo htmlentities($result->id); ?>">
+
+                </div>
+            </div>
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+
                     <label>username</label>
                     <input type="text" class="form-control" name="username" value="<?php echo htmlentities($result->username); ?>">
                 </div>

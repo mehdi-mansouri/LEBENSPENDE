@@ -30,7 +30,7 @@ if (isset($_POST['insert'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>PHP CRUD</title>
+    <title>Leben Spende</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <style type="text/css">
