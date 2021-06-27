@@ -5,7 +5,7 @@ $successmassage = null;
 
 if (isset($_POST['sub'])) {
   $email = $_POST['email'];
-  $password = crypt($_POST['password'], '$2a$07$usesomesillystringforsalt$');
+  $password = crypt($_POST['password'], '$2a$07$hashcodeforpassword$');
   $username;
   $sql = "SELECT username,email,id,password,admin_rolle,phone FROM user WHERE email=? AND password=?";
   $result = $conn->prepare($sql);
@@ -24,8 +24,8 @@ if (isset($_POST['sub'])) {
       setcookie('email', $_SESSION['email'], time() + 60 * 60 * 24 * 7, '/');
       setcookie('password', $_SESSION['password'], time() + 60 * 60 * 24 * 7, '/');
     }
-    var_dump($rows['admin']);
-    if ($rows['admin'] == 1) {
+    
+    if ($rows['admin_rolle'] == 1) {
       header('location:admin.php');
     } else {
       header('location:API.php');

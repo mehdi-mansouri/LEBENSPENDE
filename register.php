@@ -5,7 +5,7 @@ if (isset($_POST['sub'])) {
   $name = $_POST['username'];
   $email = $_POST['email'];
   $phone = $_POST['phone'];
-  $password =crypt($_POST['password'],'$2a$07$usesomesillystringforsalt$');
+  $password =crypt($_POST['password'],'$2a$07$hashcodeforpassword$');
   
   $sql = "INSERT INTO user SET username=?,email=?,phone=?,password=?";
   $result = $conn->prepare($sql);

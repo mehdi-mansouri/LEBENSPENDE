@@ -4,7 +4,7 @@ if (isset($_POST['insert'])) {
     $fname = $_POST['username'];
     $phone = intval($_POST['phone']);
     $email = $_POST['email'];
-    $password = crypt($_POST['password'], '$2a$07$usesomesillystringforsalt$');
+    $password = crypt($_POST['password'], '$2a$07$hashcodeforpassword$');
     $sql = "INSERT INTO user(username,email,phone,password) VALUES (:username,
     :email,:phone,:password)";
     $query = $conn->prepare($sql);
