@@ -115,10 +115,7 @@ include_once 'dbconfig.php';
 
 $jsonurl = "https://api.covid19api.com/summary";
 $json = file_get_contents($jsonurl);
-echo '<pre>';
 $arr = json_decode($json);
-echo '</pre>';
-
 ?>
 <section id="dinstleistung" class="section-padding">
   <div class="container-fluid ">
@@ -170,18 +167,9 @@ echo '</pre>';
           </div>
         </div>
       </div>
-
-
-
-
     </div>
-
   </div>
-
-
 </section>
-
-
 <table class="table table-hover">
   <tr>
     <th>Number</th>
@@ -189,7 +177,6 @@ echo '</pre>';
     <th>Total Confirmed</th>
     <th>Total Deaths</th>
   </tr>
-
   <?php
   for ($i = 0; $i < 190; $i++) {
   ?>
@@ -201,28 +188,16 @@ echo '</pre>';
     </tr>
   <?php } ?>
 </table>
-
-
-
-
-
 <div class="weather-container">
-
-
   <p class="country"></p>
   <p class="deathe"></p>
   <p class="astraZeneca"></p>
 </div>
-
-
-
-
-<!--      <?php
+      <?php
           echo '<pre>';
           var_dump($deat);
           echo '</pre>';
           ?>
-      -->
 <div class="container-fluid bg-main py-5">
   <div class="container">
     <div class="row">
