@@ -193,11 +193,7 @@ $arr = json_decode($json);
   <p class="deathe"></p>
   <p class="astraZeneca"></p>
 </div>
-      <?php
-          echo '<pre>';
-          var_dump($deat);
-          echo '</pre>';
-          ?>
+      
 <div class="container-fluid bg-main py-5">
   <div class="container">
     <div class="row">
