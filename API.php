@@ -115,7 +115,9 @@ include_once 'dbconfig.php';
 
 $jsonurl = "https://api.covid19api.com/summary";
 $json = file_get_contents($jsonurl);
+echo '<pre>';
 $arr = json_decode($json);
+echo '</pre>';
 ?>
 <section id="dinstleistung" class="section-padding">
   <div class="container-fluid ">
