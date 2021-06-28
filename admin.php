@@ -1,6 +1,6 @@
 <?php
 require_once('dbconfig.php');
-if (isset($_REQUEST['del'])) {
+if (isset($_GET['del'])) {
     $UserId = intval($_GET['del']);
     $sql = 'DELETE FROM user WHERE id=:id';
     $query = $conn->prepare($sql);
